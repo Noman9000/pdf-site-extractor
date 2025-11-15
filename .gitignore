@@ -1,0 +1,27 @@
+# UV
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Project-specific data directory
+data/
+# But keep the directory structure example
+!data/.gitkeep
+
+# Legacy output locations (for backwards compatibility)
+pdfs/
+*.pdf
+pdf_list.txt
+found_pdfs.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
